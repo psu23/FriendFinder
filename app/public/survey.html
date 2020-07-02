@@ -7,244 +7,265 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FriendFinder</title>
 
-    <!--Link to bootstrap-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-    <!--Link to jQuery-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
-<div class="container">
-    <h1>Survey</h1>
-    <h4>Answer each statement on a scale of 1 (completely disagree) to 5 (completely agree)</h4>
-
-    <form>
-        <div class="form-group">
-            <input id="name" type="text" class="form-control" placeholder="Name">
-        </div>
-        <div class="form-group">
-            <input id="photo" type="text" class="form-control" placeholder="Photo (link)">
-        </div>
-        <div class="form-group">
-            <label for="q01">Intelligence in another person is highly important to me.</label>
-            <select class="form-control" id="q01">
-                <option value="empty"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="q02">I like dogs more than cats.</label>
-            <select class="form-control" id="q02">
-                <option value="empty"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="q03">I love smoking.</label>
-            <select class="form-control" id="q03">
-                <option value="empty"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="q04">Vegetarianism/veganism is awesome!</label>
-            <select class="form-control" id="q04">
-                <option value="empty"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="q05">I am very open with my feelings.</label>
-            <select class="form-control" id="q05">
-                <option value="empty"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="q06">Astrological signs determine a lot about one's personality.</label>
-            <select class="form-control" id="qq06">
-                <option value="empty"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="q07">Rate your self confidence: </label>
-            <select class="form-control" id="q07">
-                <option value="empty"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="q08">I love horror movies.</label>
-            <select class="form-control" id="q08">
-                <option value="empty"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="q09">Spelling mistakes annoy me.</label>
-            <select class="form-control" id="q09">
-                <option value="empty"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="q10">I enjoy discussing politics.</label>
-            <select class="form-control" id="q10">
-                <option value="empty"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </div>
-
-        <div class="text-center">
-            <button id="submit-btn" type="submit" class="btn btn-success btn-lg">Submit</button>
-        </div>
-
-    </form>
-
-
-</div>
-
-<div id="matched-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">X</button>
-                <h2 class="modal-title"><strong>Your best match</strong></h2>
-            </div>
-            <div class="modal-body">
-                <h2 id="matched-user"></h2>
-                <img id="matched-photo" src="" alt="" height="350" width="300">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" id="closeModal" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<footer class="footer">
+<body>
     <div class="container">
-        <p><a href="/api/friends">API Friends List (Members)</a> | <a
-                href="https://github.com/psu23/FriendFinder">GitHub Repo</a></p>
+        <h1>Survey</h1>
+        <h4>Answer each statement on a scale of 1 (completely disagree) to 5 (completely agree)</h4>
+
+        <form>
+            <div class="form-group">
+                <input id="name" type="text" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <input id="photo" type="text" class="form-control" placeholder="Photo (link)">
+            </div>
+            <div class="form-group">
+                <label for="q01">Intelligence in another person is highly important to me.</label>
+                <select class="form-control" id="q01">
+                    <option value="empty"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q02">I like dogs more than cats.</label>
+                <select class="form-control" id="q02">
+                    <option value="empty"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q03">I love smoking.</label>
+                <select class="form-control" id="q03">
+                    <option value="empty"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q04">Vegetarianism/veganism is awesome!</label>
+                <select class="form-control" id="q04">
+                    <option value="empty"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q05">I am very open with my feelings.</label>
+                <select class="form-control" id="q05">
+                    <option value="empty"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q06">Astrological signs determine a lot about one's personality.</label>
+                <select class="form-control" id="qq06">
+                    <option value="empty"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q07">Rate your self confidence: </label>
+                <select class="form-control" id="q07">
+                    <option value="empty"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q08">I love horror movies.</label>
+                <select class="form-control" id="q08">
+                    <option value="empty"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q09">Spelling mistakes annoy me.</label>
+                <select class="form-control" id="q09">
+                    <option value="empty"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q10">I enjoy discussing politics.</label>
+                <select class="form-control" id="q10">
+                    <option value="empty"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <div class="text-center">
+                <button id="submit-btn" type="submit" class="btn btn-success btn-lg">Submit</button>
+            </div>
+
+        </form>
+
+
     </div>
-</footer>
 
-<!-- jQuery Reference -->
-<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <div class="container">
+
+        <!-- Modal -->
+        <div class="modal fade" id="matched-modal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Your best match: </h4>
+                    </div>
+                    <div class="modal-body">
+                        <h2 id="matched-user"></h2>
+                        <img id="matched-photo" max-height="300">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 
 
-</html>
+    <footer class="footer">
+        <div class="container">
+            <p><a href="/api/friends">API Friends List (Members)</a> | <a
+                    href="https://github.com/psu23/FriendFinder">GitHub Repo</a></p>
+        </div>
+    </footer>
 
 
-<script type="text/javascript">
+    <!-- jQuery  -->
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"
+        integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 
 
-    $("#submit-btn").on("click", function (event) {
 
-        event.preventDefault();
 
-        var formFilled = true;
+    <script type="text/javascript">
 
-        if ($("#name").val() === "" || $("#photo").val() === "") {
-            formFilled = false;
-        }
 
-        else if (
-            $("#q01").val() === "empty" ||
-            $("#q02").val() === "empty" ||
-            $("#q03").val() === "empty" ||
-            $("#q04").val() === "empty" ||
-            $("#q05").val() === "empty" ||
-            $("#q06").val() === "empty" ||
-            $("#q07").val() === "empty" ||
-            $("#q08").val() === "empty" ||
-            $("#q09").val() === "empty" ||
-            $("#q10").val() === "empty") {
-            formFilled = false;
-        }
+        $("#submit-btn").on("click", function (event) {
 
-        if (formFilled === true) {
+            event.preventDefault();
 
-            var newMember = {
-                name: $("#name").val().trim(),
-                photo: $("#photo").val().trim(),
-                scores: [
-                    $("#q01").val(),
-                    $("#q02").val(),
-                    $("#q03").val(),
-                    $("#q04").val(),
-                    $("#q05").val(),
-                    $("#q06").val(),
-                    $("#q07").val(),
-                    $("#q08").val(),
-                    $("#q09").val(),
-                    $("#q10").val()
-                ]
+            var formFilled = true;
+
+            if ($("#name").val() === "" || $("#photo").val() === "") {
+                formFilled = false;
             }
 
-            console.log(newMember);
+            else if (
+                $("#q01").val() === "empty" ||
+                $("#q02").val() === "empty" ||
+                $("#q03").val() === "empty" ||
+                $("#q04").val() === "empty" ||
+                $("#q05").val() === "empty" ||
+                $("#q06").val() === "empty" ||
+                $("#q07").val() === "empty" ||
+                $("#q08").val() === "empty" ||
+                $("#q09").val() === "empty" ||
+                $("#q10").val() === "empty") {
+                formFilled = false;
+            }
 
-            var currentURL = window.location.origin;
+            if (formFilled === true) {
 
-            $.post(currentURL + "/api/friends", newMember, function (data) {
-                $("#matched-user").text(data.name);
-                $("#matched-photo").attr("src", data.photo);
+                var newMember = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: [
+                        $("#q01").val(),
+                        $("#q02").val(),
+                        $("#q03").val(),
+                        $("#q04").val(),
+                        $("#q05").val(),
+                        $("#q06").val(),
+                        $("#q07").val(),
+                        $("#q08").val(),
+                        $("#q09").val(),
+                        $("#q10").val()
+                    ]
+                }
 
-                $("#matched-modal").modal("toggle");
-            });
-        }
+                console.log(newMember);
 
-        else {
+                var currentURL = window.location.origin;
 
-            alert("Survey is incomplete!");
-        }
+                $.post(currentURL + "/api/friends", newMember, function (data) {
 
-    });
-</script>
+                    $("#matched-user").text(data.name);
+                    $("#matched-photo").attr("src", data.photo);
+
+                    $("#matched-modal").modal("toggle");
+                });
+            }
+
+            else {
+
+                alert("Survey is incomplete!");
+            }
+
+        });
+
+        $('#close-modal').click(function () {
+            $.get('/', function (req, res) {
+                location.replace(res);
+            })
+        });
+    </script>
+</body>
+
+</html>
