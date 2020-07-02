@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!--Link to bootstrap and jquery-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -19,7 +20,7 @@
     <div class="container">
         <h1>Survey</h1>
         <h4>Answer each statement on a scale of 1 (completely disagree) to 5 (completely agree)</h4>
-
+        <!--set up survey as a form with 5 options for each prompt-->
         <form>
             <div class="form-group">
                 <input id="name" type="text" class="form-control" placeholder="Name">
@@ -173,7 +174,7 @@
 
     </div>
 
-
+    <!--Link to github repo and api list of friends-->
     <footer class="footer">
         <div class="container">
             <p><a href="/api/friends">API Friends List (Members)</a> | <a
@@ -196,17 +197,19 @@
 
     <script type="text/javascript">
 
-
+        //when user clicks submit button on bottom of survey:
         $("#submit-btn").on("click", function (event) {
 
             event.preventDefault();
-
+            //for validation of all fields being completed:
             var formFilled = true;
 
+            //make sure name and link to photo have been provided
             if ($("#name").val() === "" || $("#photo").val() === "") {
                 formFilled = false;
             }
 
+            //and all questions have been answered
             else if (
                 $("#q01").val() === "empty" ||
                 $("#q02").val() === "empty" ||
@@ -221,6 +224,7 @@
                 formFilled = false;
             }
 
+            //then collect information that will be added to the friends API
             if (formFilled === true) {
 
                 var newMember = {
@@ -240,31 +244,27 @@
                     ]
                 }
 
-                console.log(newMember);
-
+                //root of url depends on current page
                 var currentURL = window.location.origin;
-
+                
+                //add new member to friends API, then collect the logic in apiRoutes.js to attain match
                 $.post(currentURL + "/api/friends", newMember, function (data) {
 
                     $("#matched-user").text(data.name);
                     $("#matched-photo").attr("src", data.photo);
 
+                    //trigger the modal to appear when the name and photo of the best match
                     $("#matched-modal").modal("toggle");
                 });
             }
 
             else {
 
-                alert("Survey is incomplete!");
+                alert("Please answer each question and fill in all fields.");
             }
 
         });
 
-        $('#close-modal').click(function () {
-            $.get('/', function (req, res) {
-                location.replace(res);
-            })
-        });
     </script>
 </body>
 
