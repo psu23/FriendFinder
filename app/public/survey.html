@@ -207,9 +207,9 @@
 
         if (formFilled === true) {
             var newMember = {
-                memberName: $("#name").val().trim(),
-                memberPhoto: $("#photo").val().trim(),
-                memberScores: [
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: [
                     $("#q01").val(),
                     $("#q02").val(),
                     $("#q03").val(),
@@ -226,8 +226,8 @@
             var currentURL = window.location.origin;
 
             $.post(currentURL + "/api/friends", newMember, function (data) {
-                $("#matched-user").text(data.memberName);
-                $("#matched-photo").attr("src", data.memberPhoto);
+                $("#matched-user").text(data.name);
+                $("#matched-photo").attr("src", data.photo);
                 $("#matched-modal").modal("toggle");
             });
         } 
