@@ -16,3 +16,6 @@ var friends = [
         ]
     }
 ]
+
+//make friends array available to app
+module.exports = friends;
