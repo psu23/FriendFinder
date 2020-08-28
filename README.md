@@ -10,9 +10,9 @@ https://secret-basin-59299.herokuapp.com/
 
 # Screenshots from Application
 
-![home page](./public/assets/images/image01.png)
+![home page](./app/public/assets/images/image01.png)
 
-![snippet from survey page](./public/assets/images/image02.png)
+![snippet from survey page](./app/public/assets/images/image02.png)
 
 # Application Organization
 
