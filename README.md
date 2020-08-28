@@ -8,6 +8,12 @@ To handle routing to the API/database, Express was used, along with other techno
 
 https://secret-basin-59299.herokuapp.com/
 
+# Screenshots from Application
+
+![home page](./public/assets/images/image01.png)
+
+![snippet from survey page](./public/assets/images/image02.png)
+
 # Application Organization
 
 1. You first begin by going to the homepage, then clicking on 'Start' to begin the survey.
