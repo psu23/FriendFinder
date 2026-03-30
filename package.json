@@ -19,6 +19,6 @@
   "homepage": "https://github.com/psu23/FriendFinder#readme",
   "dependencies": {
     "body-parser": "^1.20.3",
-    "express": "^4.21.2"
+    "express": "^4.22.1"
   }
 }
